@@ -1,0 +1,111 @@
+/* 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(45deg, #2b1055, #92b0f1);
+            overflow: hidden;
+        }
+
+        .container {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .welcome-text {
+            position: relative;
+            color: #fff;
+            font-size: 8em;
+            z-index: 1;
+            opacity: 0;
+            transform: translateY(100px);
+            animation: fadeUp 1.5s forwards;
+        }
+
+        .subtitle {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.5em;
+            margin-top: 20px;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: fadeUp 1s 0.5s forwards;
+        }
+
+        .enter-btn {
+            position: relative;
+            padding: 15px 40px;
+            margin-top: 40px;
+            background: #fff;
+            color: #2b1055;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.5s;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: fadeUp 1s 1s forwards;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+        }
+
+        .enter-btn:hover {
+            letter-spacing: 2px;
+            transform: scale(1.1);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+        }
+
+        .particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .particles span {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: #fff;
+            border-radius: 50%;
+            animation: animate 10s linear infinite;
+            animation-duration: calc(200s / var(--i));
+        }
+
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes animate {
+            0% {
+                transform: translateY(100vh) scale(0);
+            }
+            100% {
+                transform: translateY(-10vh) scale(1);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .welcome-text {
+                font-size: 4em;
+            }
+            .subtitle {
+                font-size: 1.2em;
+                text-align: center;
+                padding: 0 20px;
+            }
+        }
+   */
+
+
+   

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>现代华丽布局</title>
+    <style>
+        /* 基础样式重置 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* 全屏渐变背景 */
+        body {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        /* 固定顶部导航栏 */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 50px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: 0.3s;
+        }
+
+        .navbar:hover {
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .logo {
+            font-size: 1.8em;
+            font-weight: bold;
+            text-decoration: none;
+            color: #fff;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 20px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        /* 全屏模块布局 */
+        section {
+            min-height: 100vh;
+            padding: 100px 10%;
+            display: flex;
+            align-items: center;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: 1s;
+        }
+
+        /* 进入视口的动画效果 */
+        section.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* 首页内容 */
+        .hero {
+            background: linear-gradient(45deg, #2b1055, #7597de);
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        }
+
+        .hero-content {
+            max-width: 600px;
+        }
+
+        .hero h1 {
+            font-size: 4em;
+            margin-bottom: 20px;
+            text-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        /* 功能卡片样式 */
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(5px);
+            margin: 20px;
+            transition: 0.5s;
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+        }
+
+        /* 特色服务区块 */
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        /* 联系表单样式 */
+        .contact-form {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 40px;
+            border-radius: 20px;
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+        }
+
+        button {
+            background: #4CAF50;
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            letter-spacing: 2px;
+            background: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <!-- 顶部导航栏 -->
+    <nav class="navbar">
+        <a href="#" class="logo">CyberSpace</a>
+        <div class="nav-links">
+            <a href="#home">首页</a>
+            <a href="#services">服务</a>
+            <a href="#about">关于</a>
+            <a href="#contact">联系</a>
+        </div>
+    </nav>
+
+    <!-- 首页模块 -->
+    <section id="home" class="hero active">
+        <div class="hero-content">
+            <h1>欢迎来到未来世界</h1>
+            <p>探索数字宇宙的无限可能</p>
+            <button>立即体验</button>
+        </div>
+    </section>
+
+    <!-- 服务模块 -->
+    <section id="services">
+        <div class="services">
+            <div class="card">
+                <h3>云端解决方案</h3>
+                <p>基于AI的智能云服务，助力企业数字化转型</p>
+            </div>
+            <div class="card">
+                <h3>数据安全</h3>
+                <p>全方位数据加密保护，确保信息安全无虞</p>
+            </div>
+            <div class="card">
+                <h3>智能开发</h3>
+                <p>自动化开发流程，提升10倍工作效率</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系模块 -->
+    <section id="contact">
+        <form class="contact-form">
+            <h2>联系我们</h2>
+            <input type="text" placeholder="姓名">
+            <input type="email" placeholder="邮箱">
+            <textarea rows="5" placeholder="留言"></textarea>
+            <button type="submit">发送信息</button>
+        </form>
+    </section>
+
+    <script>
+        // 滚动动画控制
+        window.addEventListener('scroll', () => {
+            document.querySelectorAll('section').forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                const scrollPosition = window.pageYOffset;
+                
+                // 当滚动到模块位置时触发动画
+                if (scrollPosition > sectionTop - window.innerHeight + sectionHeight / 2) {
+                    section.classList.add('active');
+                }
+            });
+        });
+
+        // 导航栏交互
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

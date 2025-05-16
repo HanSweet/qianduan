@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>华丽欢迎界面</title>
+
+    <!-- 引入 CSS 并添加 JavaScript -->
+    <link rel="stylesheet" href="aa.css">
+    <!-- <script src="script.js"></script> -->
+</head>
+<body>
+    <div class="container">
+        <h1 class="welcome-text">WELCOME</h1>
+        <p class="subtitle">探索无限可能的新世界</p>
+        <a href="#" class="enter-btn">立即体验</a>
+        
+        <!-- 粒子特效 -->
+        <div class="particles">
+            <!-- 通过JavaScript生成粒子 -->
+        </div>
+    </div>
+
+    <script>
+        // 粒子生成器
+        const particles = document.querySelector('.particles');
+        for (let i = 0; i < 50; i++) {
+            const span = document.createElement('span');
+            span.style.left = Math.random() * innerWidth + 'px';
+            span.style.setProperty('--i', Math.random() * 10 + 1);
+            particles.appendChild(span);
+        }
+
+        // 按钮点击效果
+        document.querySelector('.enter-btn').addEventListener('click', function(e) {
+            e.preventDefault();
+            this.style.transform = 'scale(0.9)';
+            setTimeout(() => {
+                this.style.transform = 'scale(1)';
+                // 这里可以添加页面跳转逻辑
+                alert('欢迎进入！');
+            }, 200);
+        });
+    </script>
+</body>
+</html>
